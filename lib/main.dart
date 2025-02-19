@@ -1,48 +1,37 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyWidget());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: "Flutter project",
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('MyWidget'),
-          centerTitle: true,
+          title: const Text("Flutter UI 2"),
         ),
         body: Container(
           height: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Icon(
-                Icons.star,
-                size: 60,
-                color: Colors.yellow,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                100,
+                (index) => Icon(
+                  Icons.radar,
+                  color: Colors.blue,
+                  size: index.toDouble(),
+                ),
               ),
-              Image(
-                image: AssetImage('assets/Shoes.PNG'),
-                width: 100,
-                height: 100,
-              ),
-              Icon(
-                Icons.star,
-                weight: 50,
-                size: 60,
-                color: Colors.yellow,
-              ),
-            ],
+            ),
           ),
         ),
       ),
