@@ -7,45 +7,43 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Basic Flutter UI-02"),
-          backgroundColor: Colors.blue[400],
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text('MyWidget'),
           centerTitle: true,
         ),
-        body: Row(
-          children: [
-            Icon(
-              Icons.star,
-              color: Colors.yellow,
-              size: 60,
-            ),
-            Icon(
-              Icons.star,
-              color: Colors.yellow,
-              size: 60,
-            ),
-            Icon(
-              Icons.star,
-              color: Colors.yellow,
-              size: 60,
-            ),
-                        Icon(
-              Icons.star,
-              color: Colors.grey,
-              size: 60,
-            ),
-                        Icon(
-              Icons.star,
-              color: Colors.grey,
-              size: 60,
-            ),
-          ],
+        body: Container(
+          height: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.star,
+                size: 60,
+                color: Colors.yellow,
+              ),
+              Image(
+                image: AssetImage('assets/Shoes.PNG'),
+                width: 100,
+                height: 100,
+              ),
+              Icon(
+                Icons.star,
+                weight: 50,
+                size: 60,
+                color: Colors.yellow,
+              ),
+            ],
+          ),
         ),
       ),
     );
