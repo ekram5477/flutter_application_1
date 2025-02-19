@@ -7,34 +7,44 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter UI 2',
-      home: const StarRatingScreen(),
-    );
-  }
-}
-
-class StarRatingScreen extends StatelessWidget {
-  const StarRatingScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Flutter UI 2"),
-      ),
-      body: Center(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: const [
-            Icon(Icons.star, size: 50, color: Colors.yellow), 
-            Icon(Icons.star, size: 50, color: Colors.yellow), 
-            Icon(Icons.star, size: 50, color: Colors.grey), 
-            Icon(Icons.star, size: 50, color: Colors.grey), 
-            Icon(Icons.star, size: 50, color: Colors.grey), 
+      title: 'Flutter Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Basic Flutter UI-02"),
+          backgroundColor: Colors.blue[400],
+          centerTitle: true,
+        ),
+        body: Row(
+          children: [
+            Icon(
+              Icons.star,
+              color: Colors.yellow,
+              size: 60,
+            ),
+            Icon(
+              Icons.star,
+              color: Colors.yellow,
+              size: 60,
+            ),
+            Icon(
+              Icons.star,
+              color: Colors.yellow,
+              size: 60,
+            ),
+                        Icon(
+              Icons.star,
+              color: Colors.grey,
+              size: 60,
+            ),
+                        Icon(
+              Icons.star,
+              color: Colors.grey,
+              size: 60,
+            ),
           ],
         ),
       ),
